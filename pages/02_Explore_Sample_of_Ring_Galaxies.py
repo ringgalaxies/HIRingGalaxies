@@ -145,9 +145,9 @@ with st.sidebar:
 
 # Open selected suvey image with aplpy
 response = requests.get(survey_image)
-#image_bytes = io.BytesIO(response.content)
+image_bytes = io.BytesIO(response.content)
 #dat = fits.open(survey_image)
-img = aplpy.FITSFigure(response)
+img = aplpy.FITSFigure(image_bytes)
 
 # Options how to display selected survey image
 with st.sidebar:
