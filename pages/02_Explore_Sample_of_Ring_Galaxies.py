@@ -23,7 +23,7 @@ from PIL import Image
 st.set_page_config(page_title="HI Ring Galaxies", layout="centered")
 st.title("HI Ring Galaxy Sample")
 
-add_logo("./images/Logo.png")
+add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
 
 
 # Plotting parameters

@@ -9,7 +9,7 @@ st.set_page_config(page_title="Literature", layout="centered")
 
 st.title("Literature")
 
-add_logo("./images/Logo.png")
+add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
 
 
 st.subheader('Data')
