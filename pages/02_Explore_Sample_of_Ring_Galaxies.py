@@ -14,6 +14,7 @@ from side_logo_func import add_logo
 import cmasher as cmr
 #import sys
 
+import io
 from io import BytesIO
 
 from streamlit_image_comparison import image_comparison
