@@ -4,3 +4,4 @@ astropy >= 4.3.1
 cmasher >= 1.6.3
 aplpy == 2.1.0
 streamlit_image_comparison == 0.0.2
+opencv-python-headless
