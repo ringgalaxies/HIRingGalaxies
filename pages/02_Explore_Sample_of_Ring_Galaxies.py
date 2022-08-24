@@ -144,7 +144,8 @@ with st.sidebar:
         radius = 0.05
 
 # Open selected suvey image with aplpy
-img = aplpy.FITSFigure(survey_image)
+dat = fits.open(survey_image)
+img = aplpy.FITSFigure(dat)
 
 # Options how to display selected survey image
 with st.sidebar:
