@@ -1,5 +1,5 @@
 import streamlit as st
-
+import requests
 from astropy.io import fits
 from astropy import units as u
 import aplpy
@@ -144,8 +144,10 @@ with st.sidebar:
         radius = 0.05
 
 # Open selected suvey image with aplpy
-dat = fits.open(survey_image)
-img = aplpy.FITSFigure(dat)
+response = requests.get(survey_image)
+#image_bytes = io.BytesIO(response.content)
+#dat = fits.open(survey_image)
+img = aplpy.FITSFigure(response)
 
 # Options how to display selected survey image
 with st.sidebar:
