@@ -79,11 +79,11 @@ with database_three:
 path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits'
 path = Path(path_to_check)
 
-if path.is_file():
-    fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits'
-else:
-    st.warning("Sorry, the particular file is missing, please try different.")
-    st.stop()
+#if path.is_file():
+fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits'
+#else:
+#    st.warning("Sorry, the particular file is missing, please try different.")
+#    st.stop()
     
 
 def get_survey_image(optionImage, survey_number):
@@ -96,11 +96,11 @@ def get_survey_image(optionImage, survey_number):
     path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits'
     path = Path(path_to_check)
 
-    if path.is_file():
-        survey_image = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits'
-    else:
-        st.warning("Sorry, the particular file is missing, please try different.")
-        st.stop()
+    #if path.is_file():
+    survey_image = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits'
+    #else:
+    #    st.warning("Sorry, the particular file is missing, please try different.")
+    #    st.stop()
 
     return survey_image
 
