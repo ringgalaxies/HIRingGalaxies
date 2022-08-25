@@ -75,13 +75,13 @@ with database_three:
 #fits_image =f'./data/{optionImage}_2_mom0.fits'
 
 # Need to check if file exist
-#https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/NGC1350/NGC1350_1.fits?raw=true
+#https://github.com/ringgalaxies/data/blob/main/NGC1350/NGC1350_1.fits?raw=true
 
-path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits'
+path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits'
 path = Path(path_to_check)
 
 #if path.is_file():
-fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits'
+fits_NHI = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits'
 #else:
 #    st.warning("Sorry, the particular file is missing, please try different.")
 #    st.stop()
@@ -94,11 +94,11 @@ def get_survey_image(optionImage, survey_number):
     """
 
     # Need to check if file exist
-    path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits'
+    path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits'
     path = Path(path_to_check)
 
     #if path.is_file():
-    survey_image = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits'
+    survey_image = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits'
     #else:
     #    st.warning("Sorry, the particular file is missing, please try different.")
     #    st.stop()
@@ -145,11 +145,8 @@ with st.sidebar:
         radius = 0.05
 
 # Open selected suvey image with aplpy
-response = requests.get(survey_image)
-st.write(response)
-#image_bytes = BytesIO(response)
-#dat = fits.open(image_bytes)
-img = aplpy.FITSFigure(response)
+img = fits.open(survey_image)
+img = aplpy.FITSFigure(img)
 
 # Options how to display selected survey image
 with st.sidebar:
@@ -339,8 +336,9 @@ def comparison_fits_images(selected_option):
     The difference is whether to show or not the HI contours and beam size.
 
     """
+    img2 = fits.open(survey_image)
 
-    img2 = aplpy.FITSFigure(survey_image2)
+    img2 = aplpy.FITSFigure(img2)
     img2.show_grayscale(vmin=None, vmid=None, vmax=None)
     
     img2.recenter(x=ra, y=dec, radius=radius)
