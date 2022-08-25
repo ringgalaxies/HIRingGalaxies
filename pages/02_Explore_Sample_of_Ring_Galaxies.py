@@ -145,8 +145,8 @@ with st.sidebar:
         radius = 0.05
 
 # Open selected suvey image with aplpy
-img = fits.open(survey_image)
-img = aplpy.FITSFigure(img)
+optical_im = fits.open(survey_image)
+img = aplpy.FITSFigure(optical_im)
 
 # Options how to display selected survey image
 with st.sidebar:
@@ -287,7 +287,7 @@ img.savefig(buf)
 hdul = fits.open(survey_image)
 #img = aplpy.FITSFigure(hdul)
 img.show_contour(hdul, levels=selected_hi_densities, cmap=cmap_hi)
-
+img.show_grayscale(vmin=None, vmid=None, vmax=None)
 
 # Add beam 
 img.add_beam(major=bmaj, minor=bmin, angle=pa, frame=True, facecolor='black')
