@@ -77,11 +77,11 @@ with database_three:
 # Need to check if file exist
 #https://github.com/ringgalaxies/data/blob/main/NGC1350/NGC1350_1.fits?raw=true
 
-path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits'
+path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits?raw=true'
 path = Path(path_to_check)
 
 #if path.is_file():
-fits_NHI = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits'
+fits_NHI = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits?raw=true'
 #else:
 #    st.warning("Sorry, the particular file is missing, please try different.")
 #    st.stop()
@@ -94,11 +94,11 @@ def get_survey_image(optionImage, survey_number):
     """
 
     # Need to check if file exist
-    path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits'
+    path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
     path = Path(path_to_check)
 
     #if path.is_file():
-    survey_image = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits'
+    survey_image = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
     #else:
     #    st.warning("Sorry, the particular file is missing, please try different.")
     #    st.stop()
