@@ -338,7 +338,7 @@ def comparison_fits_images(selected_option):
     The difference is whether to show or not the HI contours and beam size.
 
     """
-    img2 = fits.open(survey_image)
+    img2 = fits.open(survey_image2)
 
     img2 = aplpy.FITSFigure(img2)
     img2.show_grayscale(vmin=None, vmid=None, vmax=None)
@@ -359,7 +359,7 @@ def comparison_fits_images(selected_option):
     else:
 
         advanced_display_selection(img2)
-        hdul = fits.open(survey_image)
+        hdul = fits.open(fits_NHI)
         #img2 = aplpy.FITSFigure(hdul)
         img2.show_contour(hdul, levels=selected_hi_densities, cmap=cmap_hi)       
         img2.add_beam(major=bmaj, minor=bmin, angle=pa, frame=True, facecolor='black')
