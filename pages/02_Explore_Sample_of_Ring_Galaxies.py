@@ -284,10 +284,10 @@ img.savefig(buf)
 
 
 # Plot the HI contours using NHI fits file
-hdul = fits.open(survey_image)
+hdul = fits.open(fits_NHI)
 #img = aplpy.FITSFigure(hdul)
 img.show_contour(hdul, levels=selected_hi_densities, cmap=cmap_hi)
-img.show_grayscale(vmin=None, vmid=None, vmax=None)
+#img.show_grayscale(vmin=None, vmid=None, vmax=None)
 
 # Add beam 
 img.add_beam(major=bmaj, minor=bmin, angle=pa, frame=True, facecolor='black')
