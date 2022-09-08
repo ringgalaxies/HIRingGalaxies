@@ -9,10 +9,10 @@ def add_logo_t():
                 background-image: url(https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogo.png);
                 background-repeat: no-repeat;
                 padding-top: 120px;
-                background-position: 20px 20px;
+                background-position: 2px 2px;
             }
             [data-testid="stSidebarNav"]::before {
-                content: "My Company Name";
+                content: "HI-Rings";
                 margin-left: 20px;
                 margin-top: 20px;
                 font-size: 30px;
@@ -44,7 +44,8 @@ def build_markup_for_logo(
     image_width="60%",
     image_height="",
 ):
-    binary_string = get_base64_of_bin_file(png_file)
+    #binary_string = get_base64_of_bin_file(png_file)
+    binary_string = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
     return """
             <style>
                 [data-testid="stSidebarNav"] {

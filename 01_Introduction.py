@@ -7,7 +7,10 @@ st.set_page_config(page_title="Introduction: Lords Of Rings", layout="centered")
 
 st.title("Introduction")
 
-#add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
+image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
+
+add_logo(image_logo)
+#st.sidebar.image(image_logo, use_column_width=True)
 add_logo_t()
 
 st.subheader("Ring Galaxies")
