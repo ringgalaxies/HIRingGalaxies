@@ -1,6 +1,6 @@
 import streamlit as st
 #from PIL import Image
-from side_logo_func import add_logo
+from side_logo_func import add_logo, add_logo_t
 
 # set page config
 st.set_page_config(page_title="Introduction: Lords Of Rings", layout="centered")
@@ -8,6 +8,7 @@ st.set_page_config(page_title="Introduction: Lords Of Rings", layout="centered")
 st.title("Introduction")
 
 #add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
+add_logo_t()
 
 st.subheader("Ring Galaxies")
 

@@ -6,7 +6,7 @@ def add_logo_t():
         """
         <style>
             [data-testid="stSidebarNav"] {
-                background-image: url(http://placekitten.com/200/200);
+                background-image: url(https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogo.png);
                 background-repeat: no-repeat;
                 padding-top: 120px;
                 background-position: 20px 20px;
