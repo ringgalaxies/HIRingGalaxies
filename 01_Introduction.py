@@ -10,7 +10,6 @@ st.title("Introduction")
 image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
 add_logo(image_logo)
-#st.sidebar.image(image_logo, use_column_width=True)
 add_logo_t()
 
 st.subheader("Ring Galaxies")

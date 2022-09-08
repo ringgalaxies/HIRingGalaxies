@@ -10,7 +10,7 @@ import matplotlib.font_manager
 #import numpy as np
 #import seaborn as sns
 from pathlib import Path
-from side_logo_func import add_logo
+from side_logo_func import add_logo, add_logo_t
 import cmasher as cmr
 #import sys
 
@@ -24,8 +24,10 @@ from PIL import Image
 st.set_page_config(page_title="HI Ring Galaxies", layout="centered")
 st.title("HI Ring Galaxy Sample")
 
-#add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
+image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
+add_logo(image_logo)
+add_logo_t()
 
 # Plotting parameters
 matplotlib.rcParams.update(

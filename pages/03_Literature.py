@@ -1,7 +1,7 @@
 import streamlit as st
 #https://pypi.org/project/streamlit-image-comparison/
 #from streamlit_image_comparison import image_comparison
-from side_logo_func import add_logo
+from side_logo_func import add_logo, add_logo_t
 
 
 # set page config
@@ -9,8 +9,10 @@ st.set_page_config(page_title="Literature", layout="centered")
 
 st.title("Literature")
 
-#add_logo("https://raw.githubusercontent.com/ringgalaxies/HIRingGalaxies/main/Logo.png")
+image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
+add_logo(image_logo)
+add_logo_t()
 
 st.subheader('Data')
 
