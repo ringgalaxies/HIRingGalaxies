@@ -79,11 +79,11 @@ with database_three:
 # Need to check if file exist
 #https://github.com/ringgalaxies/data/blob/main/NGC1350/NGC1350_1.fits?raw=true
 
-path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits?raw=true'
+path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
 path = Path(path_to_check)
 
 #if path.is_file():
-fits_NHI = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_NHI.fits?raw=true'
+fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
 #else:
 #    st.warning("Sorry, the particular file is missing, please try different.")
 #    st.stop()
@@ -96,11 +96,11 @@ def get_survey_image(optionImage, survey_number):
     """
 
     # Need to check if file exist
-    path_to_check = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+    path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
     path = Path(path_to_check)
 
     #if path.is_file():
-    survey_image = f'https://github.com/ringgalaxies/data/blob/main/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+    survey_image = f'https://github.com/ringgalaxies//HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
     #else:
     #    st.warning("Sorry, the particular file is missing, please try different.")
     #    st.stop()
@@ -382,7 +382,7 @@ if show_plot_or_comparison == 'Compare Two Images':
     compare_selection = st.radio("Options:", 
             ("Compare Selected Image With & Without HI", 
              "Compare Selected Image With HI and Image From Another Survey",
-             "Cmpare Images From Two Surveys, Both Having HI Contours"))
+             "Compare Images From Two Surveys, Both Having HI Contours"))
 
     if compare_selection=='Compare Selected Image With & Without HI':
         image_comparison(
@@ -411,7 +411,7 @@ if show_plot_or_comparison == 'Compare Two Images':
 
 
 
-    if compare_selection=='Cmpare Images From Two Surveys, Both Having HI Contours':
+    if compare_selection=='Compare Images From Two Surveys, Both Having HI Contours':
         survey_number_comp = st.selectbox("Background Image On The Right", (used_surveys))
         
         for i, surv in enumerate(used_surveys):
