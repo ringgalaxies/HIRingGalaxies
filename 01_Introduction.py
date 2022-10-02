@@ -3,7 +3,7 @@ import streamlit as st
 from side_logo_func import add_logo, add_logo_t
 
 # set page config
-st.set_page_config(page_title="Introduction: Lords Of Rings", layout="centered")
+st.set_page_config(page_title="Introduction: HI-RINGS", layout="centered")
 
 st.title("Introduction")
 
@@ -20,8 +20,8 @@ st.markdown('**Ring galaxies** are a class of peculiar galaxies possessing disti
 
 st.subheader("Web Application")
 
-st.markdown('This Streamlit web application allows us and readers to interactively explore our sample\
-    of Ring Galaxies using: HI intensity data as well as multiple optical survey images.')
+st.markdown('This Streamlit web application allows us and community to interactively explore our sample\
+    of Ring Galaxies (HI-RINGS) using: HI intensity data and images from several other surveys: DSS, WISE, 2MASS and GALEX.')
 
 st.markdown('To start exploration, go to the page: **"Explore Sample of Ring Galaxies"**.')
 #logo, name = st.sidebar.columns(2)

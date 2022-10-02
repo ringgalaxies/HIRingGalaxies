@@ -19,14 +19,15 @@ st.subheader('Data')
 st.markdown('In this project, we are using HI data obtained through our observations \
 	and those available in the Australia Telescope Compact Array (ATCA) archive.')
 
-st.markdown('Optical images are obtained through publicly available surveys.')
+st.markdown('Images from DSS, WISE, 2MASS and GALEX survey are obtained through publicly available sources.')
 
 st.subheader('Python Packages')
 
-st.markdown('We are using the following Python packages:')
+st.markdown('We are using the following Python packages: astropy, aplpy, matplotlib, cmasher and streamlit_image_comparison')
+
 st.write("Colormaps: Viridis & Magma are from Matplotlib. Amber, Horizon, Gem, Toxic,\
 					Ocean, Bubblegum, Rainforest, Sepia and Eclipse are from Cmasher.")
 
 st.subheader('Publication')
 
-st.markdown('Using sample of Ring Galaxies, we have published:')
+st.write("In process: The HI Ring Galaxy Survey (HI-RINGS) - ATCA HI observations of Southern Ring Galaxies")

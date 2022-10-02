@@ -12,7 +12,7 @@ def add_logo_t():
                 background-position: 2px 2px;
             }
             [data-testid="stSidebarNav"]::before {
-                content: "HI-Rings";
+                content: "HI-RINGS";
                 margin-left: 20px;
                 margin-top: 20px;
                 font-size: 30px;

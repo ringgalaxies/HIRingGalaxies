@@ -21,8 +21,8 @@ from streamlit_image_comparison import image_comparison
 from PIL import Image
 
 # set page config
-st.set_page_config(page_title="HI Ring Galaxies", layout="centered")
-st.title("HI Ring Galaxy Sample")
+st.set_page_config(page_title="HI-RINGS", layout="centered")
+st.title("The HI Ring Galaxy Survey")
 
 image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
