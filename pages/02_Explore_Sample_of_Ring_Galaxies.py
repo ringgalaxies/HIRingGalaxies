@@ -44,11 +44,11 @@ galaxies = ['NGC1350','NGC1543']
 # Distances that we are using for the Ring galaxy sample
 distances = [18.83, 17.19]
 
-# List of available optical surveys
+# List of available surveys
 used_surveys = ['DSS', 'DSS2 Blue', 'DSS2 Red', 'DSS2 IR','WISE 3.4', 'WISE 4.6', 
         'WISE 12', 'WISE 22', 'GALEX Far UV', 'GALEX Near UV', '2MASS-J', '2MASS-H', '2MASS-K']
 
-# Optical survey images are obtained through astropy vizier, thus have numbers in their names
+# Survey images are obtained through astropy vizier, thus have numbers in their names
 # 2, 3 were generaly missing so they are excluded
 used_survey_numbers = ['1', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15']
 
@@ -128,7 +128,7 @@ def format_func(option):
 
 
 with st.sidebar:
-    st.info('### Optical image options')
+    st.info('### Background image options')
     survey_number = st.selectbox("Background Image From Survey", (used_surveys))
     
     # Connect survey to survey number in order to show selected one
@@ -147,8 +147,8 @@ with st.sidebar:
         radius = 0.05
 
 # Open selected suvey image with aplpy
-optical_im = fits.open(survey_image)
-img = aplpy.FITSFigure(optical_im)
+backgr_im = fits.open(survey_image)
+img = aplpy.FITSFigure(backgr_im)
 
 # Options how to display selected survey image
 with st.sidebar:
@@ -305,7 +305,7 @@ img.savefig(buf2)
 
 # Show one plot or display image comparison
 show_plot_or_comparison = st.radio("", 
-                        ("Show Optical Image & HI Contours", 
+                        ("Show Survey Image & HI Contours", 
                          "Compare Two Images"), horizontal=True)
 
 
@@ -373,7 +373,7 @@ def comparison_fits_images(selected_option):
     return buf3
 
 # Streamlit options
-if show_plot_or_comparison == "Show Optical Image & HI Contours":
+if show_plot_or_comparison == "Show Survey Image & HI Contours":
     st.pyplot()
     img.close()
 if show_plot_or_comparison == 'Compare Two Images':
