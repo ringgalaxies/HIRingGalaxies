@@ -8,6 +8,10 @@ HI-RINGS
 This Streamlit web application allows you to interactively explore our sample of Ring Galaxies (HI-RINGS) using: HI intensity data and images from several other surveys: DSS,, DSS2, WISE, 2MASS and GALEX.
 
 
+App description:
+===============
+
+
 Use HI-RINGS localy
 --------------------------------
 
@@ -55,10 +59,12 @@ Structure
    │   ├── 03_Literature.py                             # App page with references
 
 
+Community guidelines
+--------------------
 
 
 .. |logo| image:: https://github.com/ringgalaxies/HIRingGalaxies/blob/main/Logo.png
-   :width: 400
+   :width: 200
    :target: https://github.com/ringgalaxies/HIRingGalaxies
    :alt: HI logo
    
