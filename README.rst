@@ -10,7 +10,8 @@ This Streamlit web application allows you to interactively explore our sample of
 
 App description:
 ===============
-
+...
+...
 
 Use HI-RINGS localy
 --------------------------------
@@ -61,6 +62,8 @@ Structure
 
 Community guidelines
 --------------------
+...
+...
 
 
 .. |logo| image:: https://github.com/ringgalaxies/HIRingGalaxies/blob/main/Logo.png
