@@ -22,7 +22,7 @@ from PIL import Image
 
 # set page config
 st.set_page_config(page_title="HI-RINGS", layout="centered")
-st.title("The HI Ring Galaxy Survey")
+st.title("The HI in Ring Galaxies Survey")
 
 image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
