@@ -39,10 +39,13 @@ matplotlib.rcParams.update(
 
 
 # Our sample of Ring galaxies
-galaxies = ['NGC1350','NGC1543']
+galaxies = ['ESO269-57','ESO215-31','NGC1326','NGC3358','IC5267','NGC1302','NGC1398','NGC2217',
+        'NGC7020','NGC1291','NGC1371','ESO179-IG013','NGC2369','NGC1350','NGC7098','NGC1543',
+        'NGC1433','NGC1079','NGC1808','NGC5101','NGC7531','NGC6300','IC5240']
 
 # Distances that we are using for the Ring galaxy sample
-distances = [18.83, 17.19]
+distances = [43.24, 35.20, 14.95, 38.30, 21.26, 11.21, 19.79, 21.87, 29.40, 4.40, 23.79, 10.90, 
+             35.30, 18.83, 29.10, 17.19, 9.47, 25.20, 9.29, 17.23, 22.22, 12.26, 25.37]
 
 # List of available surveys
 used_surveys = ['DSS', 'DSS2 Blue', 'DSS2 Red', 'DSS2 IR','WISE 3.4', 'WISE 4.6', 
