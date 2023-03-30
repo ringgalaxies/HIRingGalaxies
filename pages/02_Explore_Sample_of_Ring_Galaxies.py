@@ -441,3 +441,5 @@ if show_plot_or_comparison == 'Compare Two Images':
             label1=f"{survey_number}",
             label2=f"{survey_number_comp}",
         )
+        
+st.button("Refresh Image")
