@@ -10,8 +10,13 @@ This Streamlit web application allows you to interactively explore our sample of
 
 App description:
 ===============
-...
-...
+
+There are two options for data display within the web application: 
+1) Display a survey image and HI contours; 
+2) Compare two images. 
+
+App allows you to make these adjustments to the display: image radius, display color options (gray-scale or custom colour map)and image stretch. Next, it is possible to adjust the HI contour display options, choosing which density contours you would like to display and which colour map scheme you want to use. 
+
 
 Use HI-RINGS localy
 --------------------------------
@@ -22,6 +27,9 @@ Clone repository and run locally with Streamlit https://streamlit.io/:
     $ git clone https://github.com/ringgalaxies/HIRingGalaxies.git
     $ cd HIRingGalaxies
     $ streamlit run 01_Introduction.py
+
+Before you run the App, you will have to make one change in the code to run it locally. 
+In the file: ``./pages/02_Explore_Sample_of_Ring_Galaxies.py`` change line 26 ``local_use = "False"`` to ``"True"``.
 
 
 **Requirements:**

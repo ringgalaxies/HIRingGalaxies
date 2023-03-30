@@ -22,14 +22,20 @@ from PIL import Image
 
 import urllib.request as urllib2
 
+# Set to "True" if you want to use this app locally 
+local_use = "False" 
+
 # set page config
 st.set_page_config(page_title="HI-RINGS", layout="centered")
 st.title("The HI in Ring Galaxies Survey")
 
-image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
+if local_use == "False":
+    image_logo = "https://raw.githubusercontent.com/ringgalaxies/ringgalaxies.github.io/main/images/RingLogoMini.png"
 
-add_logo(image_logo)
-add_logo_t()
+    add_logo(image_logo)
+    add_logo_t()
+else:
+    add_logo("./images/Logo.png")
 
 # Plotting parameters
 matplotlib.rcParams.update(
@@ -82,24 +88,37 @@ with database_three:
 #fits_image =f'./data/{optionImage}_2_mom0.fits'
 
 # HI file
-fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
+if local_use == "False":
+    fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
+else:
+    fits_NHI = f'./data/{optionImage}/{optionImage}_NHI.fits'
 
 def get_survey_image(optionImage, survey_number):
     """
     optionImage - string, galaxy name
     survey_number - each number from 1 to 15 represents particular survey data
     """
+    if local_use == "False":
+        # Need to check if file exist
+        path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
 
-    # Need to check if file exist
-    path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+        r = requests.get(path_to_check, stream=True)
+        if r.status_code == 200:
 
-    r = requests.get(path_to_check, stream=True)
-    if r.status_code == 200:
-
-        survey_image = f'https://github.com/ringgalaxies//HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+            survey_image = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+        else:
+            st.warning("Sorry, selected survey file doesn't exist, please try different survey.")
+            st.stop()   
     else:
-        st.warning("Sorry, selected survey file doesn't exist, please try different survey.")
-        st.stop()   
+        # Need to check if file exist
+        path_to_check = f'./data/{optionImage}/{optionImage}_{survey_number}.fits'
+        path = Path(path_to_check)
+
+        if path.is_file():
+            survey_image = f'./data/{optionImage}/{optionImage}_{survey_number}.fits'
+        else:
+            st.warning("Sorry, the particular file is missing, please try different.")
+            st.stop()
 
     return survey_image
 
