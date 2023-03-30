@@ -98,7 +98,7 @@ def get_survey_image(optionImage, survey_number):
 
         survey_image = f'https://github.com/ringgalaxies//HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
     else:
-        st.warning("Sorry, the particular file is missing, please try different.")
+        st.warning("Sorry, selected survey file doesn't exist, please try different survey.")
         st.stop()   
 
     return survey_image
