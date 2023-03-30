@@ -20,6 +20,8 @@ from io import BytesIO
 from streamlit_image_comparison import image_comparison
 from PIL import Image
 
+import urllib.request as urllib2
+
 # set page config
 st.set_page_config(page_title="HI-RINGS", layout="centered")
 st.title("The HI in Ring Galaxies Survey")
@@ -41,11 +43,11 @@ matplotlib.rcParams.update(
 # Our sample of Ring galaxies
 galaxies = ['ESO269-57','ESO215-31','NGC1326','NGC3358','IC5267','NGC1302','NGC1398','NGC2217',
         'NGC7020','NGC1291','NGC1371','ESO179-IG013','NGC2369','NGC1350','NGC7098','NGC1543',
-        'NGC1433','NGC1079','NGC1808','NGC5101','NGC7531','NGC6300','IC5240']
+        'NGC1433','NGC1079','NGC1808','NGC5101','NGC7531','NGC6300','IC5240', 'NGC1533']
 
 # Distances that we are using for the Ring galaxy sample
 distances = [43.24, 35.20, 14.95, 38.30, 21.26, 11.21, 19.79, 21.87, 29.40, 4.40, 23.79, 10.90, 
-             35.30, 18.83, 29.10, 17.19, 9.47, 25.20, 9.29, 17.23, 22.22, 12.26, 25.37]
+             35.30, 18.83, 29.10, 17.19, 9.47, 25.20, 9.29, 17.23, 22.22, 12.26, 25.37, 20.20]
 
 # List of available surveys
 used_surveys = ['DSS', 'DSS2 Blue', 'DSS2 Red', 'DSS2 IR','WISE 3.4', 'WISE 4.6', 
@@ -79,18 +81,8 @@ with database_three:
 # Moment 0 fits file
 #fits_image =f'./data/{optionImage}_2_mom0.fits'
 
-# Need to check if file exist
-#https://github.com/ringgalaxies/data/blob/main/NGC1350/NGC1350_1.fits?raw=true
-
-path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
-path = Path(path_to_check)
-
-#if path.is_file():
+# HI file
 fits_NHI = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_NHI.fits?raw=true'
-#else:
-#    st.warning("Sorry, the particular file is missing, please try different.")
-#    st.stop()
-    
 
 def get_survey_image(optionImage, survey_number):
     """
@@ -100,13 +92,14 @@ def get_survey_image(optionImage, survey_number):
 
     # Need to check if file exist
     path_to_check = f'https://github.com/ringgalaxies/HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
-    path = Path(path_to_check)
 
-    #if path.is_file():
-    survey_image = f'https://github.com/ringgalaxies//HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
-    #else:
-    #    st.warning("Sorry, the particular file is missing, please try different.")
-    #    st.stop()
+    r = requests.get(path_to_check, stream=True)
+    if r.status_code == 200:
+
+        survey_image = f'https://github.com/ringgalaxies//HIRingGalaxies/blob/main/data/{optionImage}/{optionImage}_{survey_number}.fits?raw=true'
+    else:
+        st.warning("Sorry, the particular file is missing, please try different.")
+        st.stop()   
 
     return survey_image
 
