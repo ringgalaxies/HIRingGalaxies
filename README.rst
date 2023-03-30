@@ -22,6 +22,8 @@ Use HI-RINGS localy
 --------------------------------
 
 Clone repository and run locally with Streamlit https://streamlit.io/:
+**Size note:** Because image data is storred in this repository, size of the cloned repo is around 420MB. 
+
 ::
 
     $ git clone https://github.com/ringgalaxies/HIRingGalaxies.git
