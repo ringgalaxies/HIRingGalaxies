@@ -24,6 +24,10 @@ st.markdown('This Streamlit web application allows us and community to interacti
     **The HI in Ring Galaxies Survey (HI-RINGS)** using: HI intensity data and images from several other surveys: DSS, WISE, 2MASS and GALEX.')
 
 st.markdown('To start exploration, go to the page: **"Explore Sample of Ring Galaxies"**.')
+
+st.info('Code for HI-RINGS app is publicly available on [**GitHub**](https://github.com/ringgalaxies/HIRingGalaxies). Feel free to star it, share it and open an issue if you find a bug or if you want some additional features.')
+
+
 #logo, name = st.sidebar.columns(2)
 #with logo:
 #    image = './images/Logo.png'
