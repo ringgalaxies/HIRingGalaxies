@@ -8,6 +8,11 @@ HI-RINGS
 This Streamlit web application allows you to interactively explore our sample of Ring Galaxies (HI-RINGS) using: HI intensity data and images from several other surveys: DSS,, DSS2, WISE, 2MASS and GALEX.
 
 
+Publication:
+===============
+HI-RINGS app is a part of accepted publication in PASA: "The HI in Ring Galaxies Survey (HI-RINGS) - Effects of the bar on the HI gas in ring galaxies: https://arxiv.org/abs/2304.00515
+
+
 App description:
 ===============
 
@@ -74,8 +79,12 @@ Structure
 
 Community guidelines
 --------------------
-...
-...
+HI-RINGS app is an open-source and free-to-use, provided under the MIT licence. If you like HI-RINGS app, please share it, star repo and feel free to open issues for any bugs/requests. 
+
+Citing
+------
+Coming soon
+
 
 
 .. |logo| image:: https://github.com/ringgalaxies/HIRingGalaxies/blob/main/Logo.png
