@@ -30,4 +30,4 @@ st.write("Colormaps: Viridis & Magma are from Matplotlib. Amber, Horizon, Gem, T
 
 st.subheader('Publication')
 
-st.write("In process: The HI Ring Galaxy Survey (HI-RINGS) - ATCA HI observations of Southern Ring Galaxies")
+st.markdown("""[**The HI in Ring Galaxies Survey (HI-RINGS) - Effects of the bar on the HI gas in ring galaxies**](https://arxiv.org/pdf/2304.00515.pdf)""")
