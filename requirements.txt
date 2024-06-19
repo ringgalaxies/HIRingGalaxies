@@ -5,3 +5,4 @@ cmasher >= 1.6.3
 aplpy == 2.1.0
 streamlit_image_comparison == 0.0.2
 torch==1.12.1
+numpy==1.23.5
